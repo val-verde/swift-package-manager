@@ -135,7 +135,7 @@ do {
 #else
 
 #if os(Windows)
-import func ucrt.exit
+import func CRT.exit
 #else
 import func Glibc.exit
 #endif

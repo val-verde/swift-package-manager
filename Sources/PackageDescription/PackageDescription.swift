@@ -13,8 +13,7 @@ import Glibc
 #elseif os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
 import Darwin.C
 #elseif os(Windows)
-import ucrt
-import struct WinSDK.HANDLE
+import WinSDK
 #endif
 import Foundation
 
