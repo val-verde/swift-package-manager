@@ -13,8 +13,7 @@
 #elseif os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
 @_implementationOnly import Darwin.C
 #elseif os(Windows)
-@_implementationOnly import ucrt
-@_implementationOnly import struct WinSDK.HANDLE
+@_implementationOnly import WinSDK
 #endif
 import Foundation
 
