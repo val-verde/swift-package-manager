@@ -392,6 +392,11 @@ public class SwiftTool {
                 action.sa_handler = SIG_DFL
                 sigaction(SIGINT, &action, nil)
                 kill(getpid(), SIGINT)
+              #elseif os(Musl)
+                var action = sigaction()
+                action.__sa_handler.sa_handler = SIG_DFL
+                sigaction(SIGINT, &action, nil)
+                kill(getpid(), SIGINT)
               #else
                 var action = sigaction()
                 action.__sigaction_handler = unsafeBitCast(
