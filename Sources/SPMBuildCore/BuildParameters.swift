@@ -144,6 +144,8 @@ public struct BuildParameters: Encodable {
             return .macOS
         } else if self.triple.isAndroid() {
             return .android
+        } else if self.triple.isMusl() {
+            return .musl
         } else if self.triple.isWASI() {
             return .wasi
         } else if self.triple.isWindows() {

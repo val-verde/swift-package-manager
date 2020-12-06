@@ -86,6 +86,8 @@ final class BuildPlanTests: XCTestCase {
             triple = Triple.macOS
         case .linux:
             triple = Triple.arm64Linux
+        case .musl:
+            triple = Triple.arm64Musl
         case .android:
             triple = Triple.arm64Android
         case .windows:
@@ -2882,6 +2884,7 @@ fileprivate extension TargetBuildDescription {
 fileprivate extension TSCUtility.Triple {
     static let x86_64Linux = try! Triple("x86_64-unknown-linux-gnu")
     static let arm64Linux = try! Triple("aarch64-unknown-linux-gnu")
+    static let arm64Musl = try! Triple("aarch64-unknown-linux-musl")
     static let arm64Android = try! Triple("aarch64-unknown-linux-android")
     static let windows = try! Triple("x86_64-unknown-windows-msvc")
     static let wasi = try! Triple("wasm32-unknown-wasi")
