@@ -261,7 +261,7 @@ public final class UserToolchain: Toolchain {
             return destination.extraSwiftCFlags
         }
 
-        return (triple.isDarwin() || triple.isAndroid() || triple.isWASI() || triple.isWindows()
+        return (triple.isDarwin() || triple.isAndroid() || triple.isMusl() || triple.isWASI() || triple.isWindows()
             ? ["-sdk", sdk.pathString]
             : [])
             + destination.extraSwiftCFlags

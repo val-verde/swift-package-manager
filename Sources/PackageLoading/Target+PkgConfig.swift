@@ -125,11 +125,17 @@ extension SystemPackageProviderDescription {
             if case .linux(.debian) = platform {
                 return true
             }
+            if case .musl = platform {
+                return true
+            }
             if case .android = platform {
                 return true
             }
         case .yum:
             if case .linux(.fedora) = platform {
+                return true
+            }
+            if case .musl = platform {
                 return true
             }
         }
