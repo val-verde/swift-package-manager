@@ -1508,6 +1508,9 @@ extension Array where Element == PackageConditionProtocol {
             case .linux:
                 result += PIF.PlatformFilter.linuxFilters
 
+            case .musl:
+                result += PIF.PlatformFilter.muslFilters
+
             case .android:
                 result += PIF.PlatformFilter.androidFilters
 
@@ -1569,6 +1572,11 @@ extension PIF.PlatformFilter {
     public static let androidFilters: [PIF.PlatformFilter] = [
         .init(platform: "linux", environment: "android"),
         .init(platform: "linux", environment: "androideabi"),
+    ]
+
+    /// Musl platform filters.
+    public static let muslFilters: [PIF.PlatformFilter] = [
+        .init(platform: "linux", environment: "musl"),
     ]
 
     /// Common Linux platform filters.

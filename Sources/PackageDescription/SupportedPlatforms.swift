@@ -40,6 +40,10 @@ public struct Platform: Encodable, Equatable {
     /// The Linux platform.
     public static let linux: Platform = Platform(name: "linux")
 
+    /// The Musl platform.
+    @available(_PackageDescription, introduced: 5.2)
+    public static let musl: Platform = Platform(name: "musl")
+
     /// The Windows platform.
     @available(_PackageDescription, introduced: 5.2)
     public static let windows: Platform = Platform(name: "windows")
