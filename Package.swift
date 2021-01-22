@@ -303,7 +303,7 @@ let relatedDependenciesBranch = "main"
 if ProcessInfo.processInfo.environment["SWIFTPM_LLBUILD_FWK"] == nil {
     if ProcessInfo.processInfo.environment["SWIFTCI_USE_LOCAL_DEPS"] == nil {
         package.dependencies += [
-            .package(url: "https://github.com/val-verde/swift-llbuild.git", .branch("val-verde-mainline")),
+            .package(url: "https://github.com/val-verde/swift-llbuild.git", .branch("val-verde-mainline-next")),
         ]
     } else {
         // In Swift CI, use a local path to llbuild to interoperate with tools
@@ -317,14 +317,14 @@ if ProcessInfo.processInfo.environment["SWIFTPM_LLBUILD_FWK"] == nil {
 
 if ProcessInfo.processInfo.environment["SWIFTCI_USE_LOCAL_DEPS"] == nil {
     package.dependencies += [
-        .package(url: "https://github.com/val-verde/swift-tools-support-core.git", .branch("val-verde-mainline")),
+        .package(url: "https://github.com/val-verde/swift-tools-support-core.git", .branch("val-verde-mainline-next")),
         // The 'swift-argument-parser' version declared here must match that
         // used by 'swift-driver' and 'sourcekit-lsp'. Please coordinate
         // dependency version changes here with those projects.
         .package(
             url: "https://github.com/val-verde/swift-argument-parser.git",
-            .branch("val-verde-mainline")),
-        .package(url: "https://github.com/val-verde/swift-driver.git", .branch("val-verde-mainline")),
+            .branch("val-verde-mainline-next")),
+        .package(url: "https://github.com/val-verde/swift-driver.git", .branch("val-verde-mainline-next")),
     ]
 } else {
     package.dependencies += [
