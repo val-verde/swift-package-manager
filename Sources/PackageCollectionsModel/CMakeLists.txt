@@ -15,6 +15,11 @@ target_link_libraries(PackageCollectionsModel PUBLIC
 set_target_properties(PackageCollectionsModel PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_Swift_MODULE_DIRECTORY})
 
+if(Foundation_FOUND)
+  target_link_libraries(PackageCollectionsModel PUBLIC
+  $<$<NOT:$<PLATFORM_ID:Darwin>>:Foundation>)
+endif()
+
 if(USE_CMAKE_INSTALL)
 install(TARGETS PackageCollectionsModel
   ARCHIVE DESTINATION lib
